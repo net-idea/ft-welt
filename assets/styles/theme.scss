@@ -1,0 +1,494 @@
+@use 'sass:color';
+@import 'variables';
+@import 'mixins';
+
+// ============================================================================
+// GLOBAL STYLES & PAGE STRUCTURE
+// ============================================================================
+
+body {
+  color: $text-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  background: $body-background url('../images/fenster-tueren-background.jpg') no-repeat center fixed;
+  background-size: cover;
+}
+
+.wrapper {
+  margin-top: 0;
+  margin-bottom: 18.75pt;
+}
+
+.wrapper.header {
+  margin-top: 15pt;
+  margin-bottom: 0;
+}
+
+.wrapper.content {
+  background: $color-bg-overlay;
+  padding: 15pt;
+  margin-top: 0;
+  border-radius: 0 0 $base-border-radius $base-border-radius;
+
+  @include box-shadow(0 0 37.5pt 0 rgba(0, 0, 0, 0.7));
+}
+
+// ============================================================================
+// TYPOGRAPHY
+// ============================================================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $heading-color;
+}
+
+a {
+  color: $link-color;
+
+  &:hover {
+    color: $link-color-hover;
+    text-decoration: none;
+  }
+}
+
+// ============================================================================
+// WELLS & INFO BOXES
+// Contact page info boxes and similar containers
+// ============================================================================
+
+.well {
+  @include border-radius($base-border-radius);
+  @include box-shadow(inset 0 0 0);
+
+  background: $well-background;
+  border: 1px solid $well-border-color;
+  padding: $well-padding;
+  margin-bottom: 15pt;
+
+  p {
+    margin-bottom: 7.5pt;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  hr {
+    margin: 11.25pt 0;
+  }
+}
+
+.lead {
+  font-size: $lead-font-size;
+  font-weight: $lead-font-weight;
+  line-height: 1.4;
+  margin-bottom: 11.25pt;
+}
+
+.centered {
+  text-align: center;
+}
+
+// ============================================================================
+// HOME PAGE INFO COLUMNS
+// ============================================================================
+
+.info-column {
+  margin-bottom: 18.75pt;
+  padding: 15pt;
+  background: $color-white;
+  border: 1px solid rgb(0 0 0 / 5%);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @include border-radius($base-border-radius);
+  @include box-shadow(0 0 15pt rgba(0, 0, 0, 0.08));
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 11.25pt;
+  }
+
+  h3 {
+    margin-bottom: 7.5pt;
+  }
+
+  p {
+    flex-grow: 1;
+  }
+
+  .btn {
+    margin-top: auto;
+  }
+}
+
+.img-rounded {
+  @include border-radius($base-border-nested);
+  @include box-shadow(0 0 3.75pt rgba(0, 0, 0, 0.8));
+
+  max-width: 100%;
+  height: auto;
+}
+
+// ============================================================================
+// CAROUSEL
+// ============================================================================
+
+.carousel-caption {
+  display: block;
+  padding: 7.5pt 15pt;
+  background: $color-bg-overlay-dark;
+  border-radius: $base-border-radius;
+
+  h4,
+  h5 {
+    color: $color-white;
+    margin: 0;
+  }
+}
+
+#home-carousel {
+  margin-bottom: 15pt;
+}
+
+// ============================================================================
+// SOCIAL MEDIA LINKS
+// ============================================================================
+
+.social-media {
+  list-style: none;
+  text-align: center;
+  margin-top: 18.75pt;
+  margin-left: 0;
+
+  li {
+    display: inline-block;
+
+    a {
+      font-size: 22.5pt;
+
+      &:hover {
+        transition: all 0.3s;
+      }
+    }
+  }
+}
+
+header form {
+  margin-top: 15pt;
+  text-align: right;
+}
+
+// ============================================================================
+// PORTFOLIO
+// ============================================================================
+
+.portfolio {
+  padding-top: 3.75pt;
+
+  li {
+    margin-left: 20.25pt;
+  }
+
+  .thumbnail {
+    padding: 6pt;
+
+    @include box-shadow(0 0 0 5px rgba(0, 0, 0, 0.05));
+
+    &:hover {
+      @include box-shadow(0 0 0 5px rgba(0, 0, 0, 0.1));
+    }
+
+    a img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+// ============================================================================
+// PORTFOLIO FILTER LINKS
+// ============================================================================
+
+.filter {
+  margin-left: 0;
+  margin-bottom: 40px;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  a {
+    margin-right: 5px;
+    padding: 6px 12px;
+    background: $complementary-color-light;
+    color: $color-white;
+    text-decoration: none;
+
+    @include border-radius($base-border-radius);
+  }
+
+  a:hover {
+    background: $primary-color;
+  }
+
+  span {
+    margin-right: 5px;
+  }
+
+  .active {
+    background: $primary-color;
+  }
+}
+
+// ============================================================================
+// PRICING TABLE
+// ============================================================================
+
+.pricing-table {
+  position: relative;
+  margin-left: 0;
+  padding: 10px;
+  list-style: none;
+  text-align: center;
+  border: 1px solid $color-gray-lightest;
+
+  @include border-radius($base-border-radius);
+  @include box-shadow(0 0 0 5px rgba(0, 0, 0, 0.05));
+
+  li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed $color-gray-lightest;
+  }
+
+  .footer {
+    border: 0;
+    margin-top: 18px;
+    margin-bottom: 8px;
+  }
+}
+
+// ============================================================================
+// RIBBON FOR FEATURED PRICING
+// ============================================================================
+
+.ribbon-wrapper {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+}
+
+.ribbon {
+  font: bold 15px sans-serif;
+  text-align: center;
+  color: color.adjust($primary-color, $lightness: -25%);
+  text-shadow: 0 1px 0 rgb(255 255 255 / 50%);
+  transform: rotate(45deg);
+  position: relative;
+  padding: 7px 0;
+  left: -5px;
+  top: 15px;
+  width: 120px;
+  background: linear-gradient(color.adjust($primary-color, $lightness: 5%), color.adjust($primary-color, $lightness: 5%), color.adjust($primary-color, $lightness: -10%));
+
+  @include box-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+}
+
+// ============================================================================
+// BLOG
+// ============================================================================
+
+.avatar {
+  margin-right: 8px;
+  margin-bottom: 10px;
+}
+
+.post-img {
+  margin-bottom: 15px;
+}
+
+article {
+  margin-bottom: 50px;
+
+  h3 {
+    margin-top: 0;
+
+    a {
+      color: $complementary-color;
+
+      &:hover {
+        color: $link-color;
+      }
+    }
+  }
+}
+
+.comment-form {
+  padding: 3px;
+}
+
+// ============================================================================
+// WIDGET CAROUSEL (SIDEBAR)
+// ============================================================================
+
+#widget-carousel .carousel-control {
+  width: 25px;
+  height: 25px;
+  top: 35%;
+
+  @include border-radius($base-border-radius);
+
+  border: 0;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+// ============================================================================
+// TAG CLOUD
+// ============================================================================
+
+.tag-cloud {
+  margin-left: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  a {
+    margin-right: 5px;
+    padding: 6px 12px;
+    border: 0;
+    background: $complementary-color-light;
+    color: $color-white;
+    text-decoration: none;
+
+    @include border-radius($base-border-radius);
+  }
+
+  a:hover {
+    background: $primary-color;
+  }
+
+  span {
+    margin-right: 5px;
+  }
+
+  .active {
+    background: $primary-color;
+  }
+}
+
+// ============================================================================
+// FENSTER PAGE SPECIFIC STYLES
+// ============================================================================
+
+.row {
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+hr {
+  border-top: 2px solid $color-gray-lighter;
+  margin: 10px 0;
+}
+
+// ============================================================================
+// MODAL IMPROVEMENTS
+// ============================================================================
+
+.modal-dialog {
+  .modal-header {
+    background: $complementary-color;
+    color: $color-white;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+
+    .modal-title {
+      color: $color-white;
+    }
+
+    .btn-close {
+      filter: invert(1);
+    }
+  }
+
+  .nav-tabs {
+    border-bottom: 2px solid $complementary-color;
+
+    .nav-link {
+      color: $complementary-color;
+      border: none;
+      border-radius: 0;
+
+      &:hover {
+        border-color: transparent;
+        color: $primary-color;
+      }
+
+      &.active {
+        color: $primary-color;
+        border-bottom: 2px solid $primary-color;
+        background: transparent;
+      }
+    }
+  }
+}
+
+// ============================================================================
+// MEDIA QUERIES - RESPONSIVE DESIGN
+// ============================================================================
+
+@media (min-width: 1200px) {
+  input.flexible {
+    width: 73%;
+  }
+}
+
+@media (max-width: 1199px) {
+  input.flexible {
+    width: 70%;
+  }
+}
+
+@media (max-width: 979px) {
+  .info-box {
+    text-align: center;
+  }
+
+  input.flexible {
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  header,
+  header form {
+    text-align: center;
+  }
+
+  .social-media {
+    margin: 0;
+  }
+}

@@ -1,0 +1,182 @@
+@import 'variables';
+@import 'mixins';
+
+// ============================================================================
+// FORM ELEMENTS
+// Global form base styles (input fields, textareas, selects)
+// ============================================================================
+
+.form-control,
+textarea,
+input[type='text'],
+input[type='password'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='date'],
+input[type='month'],
+input[type='time'],
+input[type='week'],
+input[type='number'],
+input[type='email'],
+input[type='url'],
+input[type='search'],
+input[type='tel'],
+input[type='color'],
+.uneditable-input {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  margin-bottom: $form-field-spacing;
+  font-size: $base-font-size;
+  line-height: 1.4286;
+  color: $form-text-color;
+  background-color: $form-background-color;
+  background-image: none;
+  border: 1px solid $form-border-color;
+  border-radius: $base-border-nested;
+
+  @include box-shadow(0 0 0 4px $color-shadow);
+
+  transition:
+    border-color ease-in-out 0.15s,
+    box-shadow ease-in-out 0.15s;
+
+  &:focus {
+    border-color: $primary-color;
+    outline: 0;
+
+    @include box-shadow(0 0 0 4px $color-shadow);
+  }
+
+  &::placeholder {
+    color: $form-placeholder-color;
+    opacity: 1;
+  }
+}
+
+textarea.form-control {
+  height: auto;
+  resize: vertical;
+}
+
+// ============================================================================
+// FORM LABELS
+// ============================================================================
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+
+// ============================================================================
+// FORM CHECKBOXES / RADIO
+// ============================================================================
+
+input[type='checkbox'],
+input[type='radio'] {
+  width: auto;
+  min-width: 16px;
+  min-height: 16px;
+  margin: 0 8px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.form-check-input {
+  width: auto;
+  min-width: 16px;
+  min-height: 16px;
+  margin: 0 8px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.form-check-label,
+label.checkbox {
+  margin-bottom: $form-field-spacing;
+  font-weight: normal;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.form-group {
+  input[type='checkbox'] + label,
+  input[type='radio'] + label {
+    display: inline;
+    vertical-align: middle;
+    margin-left: 4px;
+    cursor: pointer;
+  }
+}
+
+// ============================================================================
+// ALERTS
+// Bootstrap-style alert boxes for error messages and notices
+// ============================================================================
+
+.alert {
+  padding: $alert-padding;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: $base-border-nested;
+  text-shadow: 0 1px 0 rgb(255 255 255 / 50%);
+
+  h4 {
+    margin: 0;
+  }
+
+  .close {
+    position: relative;
+    top: $alert-close-position-top;
+    right: $alert-close-position-right;
+    line-height: 20px;
+    color: inherit;
+  }
+}
+
+.alert-success {
+  color: $alert-success-text;
+  background-color: $alert-success-bg;
+  border-color: $alert-success-border;
+}
+
+.alert-error,
+.alert-danger {
+  color: $alert-error-text;
+  background-color: $alert-error-bg;
+  border-color: $alert-error-border;
+}
+
+.alert-info {
+  color: $alert-info-text;
+  background-color: $alert-info-bg;
+  border-color: $alert-info-border;
+}
+
+.alert-warning {
+  color: $alert-warning-text;
+  background-color: $alert-warning-bg;
+  border-color: $alert-warning-border;
+}
+
+// ============================================================================
+// CONTACT FORM SPECIFIC
+// ============================================================================
+
+.contact-form {
+  .flexible {
+    width: 100%;
+  }
+
+  input,
+  textarea {
+    margin-bottom: $form-field-spacing;
+  }
+}
+
+// Honeypot field (hidden anti-spam)
+.rep {
+  display: none !important;
+}

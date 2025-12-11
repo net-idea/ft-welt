@@ -1,0 +1,46 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <h4>Kontakt</h4>
+        <address>
+          <abbr title="Internet-Seite">Internet:</abbr> <a href="{{ website }}">{{ website }}</a><br />
+          <abbr title="E-Mail-Adresse">E-Mail:</abbr> <span class="contact-email"></span><br />
+          <abbr title="Mobil-Nummer">Mobil:</abbr> <span class="contact-phone"></span><br />
+          <abbr title="WhatsApp">WhatsApp:</abbr> <span class="contact-whatsapp"></span>
+        </address>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h4>Anschrift</h4>
+        <address>
+          {{ company }}<br />
+          Krumme Gärten 9<br />
+          13581 Berlin<br />
+          <em>Deutschland</em>
+        </address>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h4>Weiterführend</h4>
+        <ul>
+          <li><a href="{{ path('page_kontakt') }}">Kontakt</a></li>
+          <li><a href="{{ path('app_page', {'slug':'impressum'}) }}">Impressum</a></li>
+          <li><a href="{{ path('app_page', {'slug':'datenschutz'}) }}">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-line">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p class="float-end mb-0">
+            <a href="#header">zum Seiten-Anfang</a>
+          </p>
+          <p class="mb-0">
+            &copy; 2016–{{ 'now'|date('Y') }} by <a href="https://ft-welt.de" target="_blank">Fenster & Türen-Welt</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

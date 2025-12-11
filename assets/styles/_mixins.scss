@@ -1,0 +1,28 @@
+// ============================================================================
+// MIXINS
+// Wiederverwendbare Helfer für Border-Radius, Box-Shadow usw.
+// ============================================================================
+
+// Mixins converted from LESS prefixer
+
+// Border Radius
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  background-clip: padding-box;
+}
+
+@mixin border-radius-top($radius) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+  background-clip: padding-box;
+}
+
+// Box Shadows
+@mixin box-shadow($shadow...) {
+  box-shadow: $shadow;
+}
+
+// Background Size
+@mixin background-size($size) {
+  background-size: $size;
+}

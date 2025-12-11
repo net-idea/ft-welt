@@ -1,0 +1,24 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  App\:
+    resource: '../src/'
+    exclude:
+      - '../src/DependencyInjection/'
+      - '../src/Entity/'
+      - '../src/Kernel.php'
+      - '../src/Acme/'
+      - '../src/Ftw/'
+
+  App\Controller\:
+    resource: '../src/Controller/'
+    tags: ['controller.service_arguments']
+
+  App\Service\MailManService:
+    arguments:
+      $fromAddress: '%env(MAIL_FROM_ADDRESS)%'
+      $fromName: '%env(MAIL_FROM_NAME)%'
+      $toAddress: '%env(MAIL_TO_ADDRESS)%'
+      $toName: '%env(MAIL_TO_NAME)%'

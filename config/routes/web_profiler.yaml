@@ -1,0 +1,4 @@
+# web profiler routes were moved to config/routes/dev/web_profiler.yaml
+# They must only be loaded in the dev/test environment where the WebProfilerBundle
+# is enabled. Keeping this file empty prevents the profiler routes from being
+# imported in production where the bundle is not available.

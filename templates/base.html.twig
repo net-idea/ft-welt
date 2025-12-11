@@ -1,0 +1,52 @@
+{% set company = 'Fenster & Türen-Welt' %}
+{% set website = 'https://ft-welt.de/' %}
+{% set emailaddress = '' %}
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      {{ company }}{% if block('title') is defined %}
+        ::{% block title %}
+
+        {% endblock %}
+      {% endif %}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    {% block stylesheets %}
+      {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% if app.environment == 'prod' %}
+      <meta name="google-site-verification" content="zvipvOixD3yVTlQyT_wV0M5R80mQXI0wLjrb5CU2i-I" />
+    {% endif %}
+  </head>
+  <body>
+    <div class="container wrapper header">
+      {% include 'partials/header.html.twig' %}
+      {% include 'partials/navbar.html.twig' %}
+    </div>
+
+    <div class="container wrapper content">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+
+    {% include 'partials/footer.html.twig' %}
+
+    {% block javascripts %}
+      {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+
+    {% if app.environment == 'prod' %}
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-40654592-1', 'ft-welt.de'); ga('send', 'pageview');
+      </script>
+    {% endif %}
+  </body>
+</html>

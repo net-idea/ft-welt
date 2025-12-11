@@ -1,0 +1,53 @@
+{% set currentRoute = app.request.get('_route') %}
+{% set currentSlug = app.request.get('slug') %}
+
+{# Separate dropdown items (where dropdown=true) into a single 'mehr' group #}
+{% set navItemsMain = navItems|filter(i => not (i.dropdown is defined and i.dropdown)) %}
+{% set navItemsDropdown = navItems|filter(i => i.dropdown is defined and i.dropdown) %}
+
+<div class="row">
+  <nav class="navbar navbar-expand-lg navbar-dark primary-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ path('app_main') }}">ft-welt.de</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          {% for item in navItemsMain %}
+            {% set isActive = (item.slug is defined and item.slug == currentSlug) or (item.url is defined and app.request.uri ends with item.url) %}
+            {% if item.slug is defined and item.slug == 'start' %}
+              {% set isActive = currentRoute == 'app_main' %}
+            {% endif %}
+
+            <li class="nav-item{{ isActive ? ' active' : '' }}">
+              <a class="nav-link{{ isActive ? ' active' : '' }}" href="{{ item.url is defined ? item.url : (item.slug is defined ? path('app_page', {'slug': item.slug}) : '#') }}" {{ isActive ? ' aria-current="page"' : '' }}>{{ item.label }}</a>
+            </li>
+          {% endfor %}
+
+          {% if navItemsDropdown|length > 0 %}
+            {# determine if any dropdown subitem is active #}
+            {% set isDropdownActive = false %}
+            {% for di in navItemsDropdown %}
+              {% if di.slug is defined and di.slug == currentSlug %}
+                {% set isDropdownActive = true %}
+              {% elseif di.url is defined and app.request.uri ends with di.url %}
+                {% set isDropdownActive = true %}
+              {% endif %}
+            {% endfor %}
+
+            <li class="nav-item dropdown{{ isDropdownActive ? ' active' : '' }}">
+              <a class="nav-link dropdown-toggle{{ isDropdownActive ? ' active' : '' }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">mehr</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% for sub in navItemsDropdown %}
+                  {% set subActive = (sub.slug is defined and sub.slug == currentSlug) or (sub.url is defined and app.request.uri ends with sub.url) %}
+                  <li>
+                    <a class="dropdown-item{{ subActive ? ' active' : '' }}" href="{{ sub.url is defined ? sub.url : (sub.slug is defined ? path('app_page', {'slug': sub.slug}) : '#') }}">{{ sub.label }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

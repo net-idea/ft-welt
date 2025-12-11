@@ -1,0 +1,168 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Kontaktformular
+{% endblock %}
+
+{% block content %}
+  <a id="contact-success"></a>
+  <a id="contact-error"></a>
+
+  {% if successMessage %}
+    <div class="alert alert-success">
+      {{ successMessage|raw }}
+    </div>
+  {% endif %}
+
+  {% if errorMessage %}
+    <div class="alert alert-danger">
+      {{ errorMessage|raw }}
+    </div>
+  {% endif %}
+
+  {% set hasErrors = false %}
+  {% for child in form.children %}
+    {% if (child.vars.errors|length) > 0 %}
+      {% set hasErrors = true %}
+    {% endif %}
+  {% endfor %}
+  {% if (form.vars.errors|length) > 0 %}
+    {% set hasErrors = true %}
+  {% endif %}
+
+  {% if hasErrors %}
+    <div class="alert alert-danger">
+      <strong>Bitte korrigieren Sie die markierten Felder:</strong>
+      <ul class="mb-0">
+        {% for child in form.children %}
+          {% if (child.vars.errors|length) > 0 %}
+            {% for error in child.vars.errors %}
+              <li><strong>{{ child.vars.label }}:</strong> {{ error.message }}</li>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+        {% for error in form.vars.errors %}
+          <li>{{ error.message }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  <div class="row">
+    <div class="col-12">
+      <h2>So treten Sie mit uns in Kontakt</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Schreiben Sie uns</h3>
+      {% set formAttr = { class: 'contact-form', novalidate: 'novalidate', 'data-turbo': 'false' } %}
+      {% set flexibleAttr = { class: 'flexible' } %}
+      {% set textareaAttr = { class: 'flexible', rows: 4 } %}
+      {{ form_start(form, { action: path('page_kontakt'), attr: formAttr }) }}
+      <div class="form-group">
+        {{ form_label(form.name, 'Ihr Name / Ihre Firma:') }}
+        {{ form_widget(form.name, { attr: flexibleAttr }) }}
+        {{ form_errors(form.name) }}
+      </div>
+
+      <div class="form-group">
+        {{ form_label(form.email, 'Ihre E-Mail-Adresse:') }}
+        {{ form_widget(form.email, { attr: flexibleAttr }) }}
+        {{ form_errors(form.email) }}
+      </div>
+
+      <div class="form-group">
+        {{ form_label(form.phone, 'Ihre Telefonnummer (optional):') }}
+        {{ form_widget(form.phone, { attr: flexibleAttr }) }}
+        {{ form_errors(form.phone) }}
+      </div>
+
+      {{ form_widget(form.emailrep) }}
+      {{ form_widget(form.website) }}
+
+      <div class="form-group">
+        {{ form_label(form.message, 'Ihre Nachricht:') }}
+        {{ form_widget(form.message, { attr: textareaAttr }) }}
+        {{ form_errors(form.message) }}
+      </div>
+
+      <div class="form-group">
+        {{ form_widget(form.copy) }}
+        {{ form_label(form.copy) }}
+      </div>
+
+      <div class="form-group">
+        {{ form_widget(form.consent) }}
+        {{ form_label(form.consent) }}
+        {{ form_errors(form.consent) }}
+      </div>
+
+      <button type="submit" class="btn btn-primary">Nachricht senden</button>
+      {{ form_end(form) }}
+    </div>
+
+    <div class="col-md-4">
+      <h3>Sie erreichen uns unter</h3>
+      <div class="well">
+        <section class="ftw_contact_info">
+          <header>
+            <h3 class="title_02">{{ company }}</h3>
+          </header>
+          <address>
+            <abbr title="Mobil-Nummer">Mobil:</abbr> <span class="contact-phone"></span><br />
+            <abbr title="WhatsApp">WhatsApp:</abbr> <span class="contact-whatsapp"></span><br />
+            <abbr title="Internet-Seite">Internet:</abbr>
+            <a href="{{ website }}">{{ website }}</a><br />
+            <abbr title="E-Mail-Adresse">E-Mail:</abbr>
+            <span class="contact-email"></span>
+          </address>
+        </section>
+        <hr />
+        <p>
+          Zögern Sie bitte nicht uns anzurufen. Bei einem kurzen Telefonat lässt sich oft alles am schnellsten besprechen.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <h3>Unsere Anschrift</h3>
+      <div class="well">
+        <section class="ftw_contact_info">
+          <header>
+            <h3 class="title_02">{{ company }}</h3>
+          </header>
+          <address>
+            Krummer Gärten 9<br />
+            13581 Berlin<br />
+            <i>Deutschland</i>
+          </address>
+        </section>
+        <hr />
+        <p>
+          Bitte senden Sie Ihre Post und Sendungen an diese Anschrift.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-12">
+      <p class="lead">
+        Wir sind jeder Zeit offen für Ihre Fragen, Anmerkungen und Wünsche.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="alert alert-warning centered">
+        <h3><span>Datenschutzerklärung</span></h3>
+        <strong>Unser Umgang mit Ihren Daten</strong>
+        Bei der Kontaktaufnahme über das Kontaktformular oder per E-Mail mit uns, der
+        {{ company }}, werden Ihre Angaben zwecks Bearbeitung Ihrer Anfrage sowie für den Fall, dass Anschlussfragen entstehen, bei uns abgesichert und verschlüsselt gespeichert.
+      </div>
+    </div>
+  </div>
+{% endblock %}
