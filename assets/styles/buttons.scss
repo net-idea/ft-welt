@@ -1,0 +1,105 @@
+@use 'sass:color';
+@import 'variables';
+@import 'mixins';
+
+// ============================================================================
+// BUTTONS
+// Global button variants and sizes
+// ============================================================================
+
+// Base button styles
+.btn {
+  display: inline-block;
+  padding: 8px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  text-decoration: none;
+  background: $btn-background;
+  color: $btn-text-color;
+  text-shadow: 0 -1px 0 rgb(0 0 0 / 25%);
+  border: 1px solid $btn-border;
+  border-radius: $base-border-nested;
+
+  @include box-shadow(0 0 0 4px $btn-shadow-color);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $btn-text-color;
+    background: $btn-background-highlight;
+    border-color: color.adjust($btn-border, $lightness: 5%);
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+  }
+}
+
+// Primary button variant
+.btn-primary {
+  background: $btn-primary-background;
+  text-shadow: 0 -1px 0 rgb(0 0 0 / 40%);
+  border-color: $btn-primary-border;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $btn-primary-background-highlight;
+    border-color: color.adjust($btn-primary-border, $lightness: 5%);
+    color: $btn-text-color;
+  }
+}
+
+// Secondary button variant
+.btn-secondary {
+  background-color: $btn-background;
+  border: 1px solid $btn-border;
+
+  @include box-shadow(0 0 0 4px $btn-shadow-color);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $btn-background-highlight;
+    border-color: color.adjust($btn-border, $lightness: 5%);
+  }
+}
+
+// Info button variant
+.btn-info {
+  background: $color-info;
+  color: $btn-text-color;
+  text-shadow: 0 -1px 0 rgb(0 0 0 / 25%);
+  border: 1px solid $color-info-border;
+
+  @include box-shadow(0 0 0 4px $btn-shadow-color);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $color-info-light;
+    border-color: $color-info;
+    color: $btn-text-color;
+  }
+}
+
+// Outline primary button variant
+.btn-outline-primary {
+  background: transparent;
+  color: $primary-color;
+  text-shadow: none;
+  border: 1px solid $primary-color;
+
+  @include box-shadow(0 0 0 4px $btn-shadow-color);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $primary-color;
+    color: $btn-text-color;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 25%);
+  }
+}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  AGB - Fenster & Türen-Welt
+{% endblock %}
+
+{% block content %}
+  <h1 class="mb-4">Allgemeine Geschäftsbedingungen</h1>
+
+  <div class="card">
+    <div class="card-body">
+      <h2 class="h5">1. Geltungsbereich</h2>
+      <p>
+        Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge zwischen Fenster & Türen-Welt und dem Kunden.
+      </p>
+
+      <h2 class="h5 mt-4">2. Vertragsschluss</h2>
+      <p>
+        Der Vertrag kommt durch schriftliche Auftragsbestätigung oder durch Beginn der Arbeiten zustande.
+      </p>
+
+      <h2 class="h5 mt-4">3. Preise und Zahlung</h2>
+      <p>
+        Alle Preise verstehen sich inklusive der gesetzlichen Mehrwertsteuer. Die Zahlung erfolgt nach Abschluss der Montagearbeiten.
+      </p>
+
+      <h2 class="h5 mt-4">4. Gewährleistung</h2>
+      <p>
+        Es gelten die gesetzlichen Gewährleistungsrechte. Für Material und Montage gewähren wir die gesetzliche Gewährleistung.
+      </p>
+
+      <p class="mt-4">
+        <small>Stand: {{ 'now'|date('d.m.Y') }}</small>
+      </p>
+    </div>
+  </div>
+{% endblock %}

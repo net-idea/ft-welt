@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Türen - Fenster & Türen-Welt
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-12">
+      <h2>Türen</h2>
+      <hr />
+      <p>
+        Wir bieten Ihnen eine professionellen Verkaufs-Service und die komplette Installation von Eingangstüren bzw. Haustüren.
+      </p>
+      <p>
+        Von uns angebotene Türen sind in Kunststoff, Aluminium und Holz als auch in feuerfesten Ausführungen verfügbar.
+      </p>
+      <p>
+        Bitte suchen Sie aus unserem Angebot Ihr gewünschtes Tür-Model aus und <a href="{{ path('page_kontakt') }}">sprechen Sie uns unter Nennung der Artikel-Nr. an</a>. Wir erstellen Ihnen sehr gerne ein passendes Angebot mit einer genauen Kalkulation.
+      </p>
+      <hr />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <h3>Kunststoff-Türen</h3>
+      <p>
+        <img src="/images/drzwi_pvc.jpg" alt="Kunststoff-Türen" class="img-fluid rounded" width="192" height="390" />
+      </p>
+      {# <p><a href="http://www.knplast.sk/de/vyplne-pre-dvere/plastove" target="_blank">Übersicht der verfügbaren Muster</a></p> #}
+    </div>
+    <div class="col-md-3">
+      <h3>Aluminium-Türen</h3>
+      <p>
+        <img src="/images/drzwi_aluminiowe.jpg" alt="Aluminium-Türen" class="img-fluid rounded" width="182" height="416" />
+      </p>
+      {# <p><a href="http://www.knplast.sk/de/vyplne-pre-dvere/hlinikove" target="_blank">Übersicht der verfügbaren Muster</a></p> #}
+    </div>
+    <div class="col-md-3">
+      <h3>Holz-Türen</h3>
+      <p>
+        <img src="/images/drzwi_drewniane.jpg" alt="Holz-Türen" class="img-fluid rounded" width="187" height="388" />
+      </p>
+      {# <p><a href="http://www.knplast.sk/de/vyplne-pre-dvere/drevene" target="_blank">Übersicht der verfügbaren Muster</a></p> #}
+    </div>
+    <div class="col-md-3">
+      <h3>Feuerfeste-Türen</h3>
+      <p>
+        <img src="/images/drzwi_przeciwpozarowe.jpg" alt="Feuerfeste-Türen" class="img-fluid rounded" width="189" height="377" />
+      </p>
+      {# <p>&nbsp;</p> #}
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-12">
+      <hr />
+      <p class="lead">
+        <strong>Wir konnten Ihr Interesse wecken?</strong>
+      </p>
+      <p>
+        Bitte suchen Sie aus unserem Angebot Ihr gewünschtes Tür-Model aus und <a href="{{ path('page_kontakt') }}">sprechen Sie uns unter Nennung der Artikel-Nr. an</a>. Wir erstellen Ihnen sehr gerne ein passendes Angebot mit einer genauen Kalkulation.
+      </p>
+      <p class="lead">
+        <strong>Haben Sie noch weitere Fragen und Wünsche, dann stehen wir Ihnen jederzeit zur Verfügung.</strong>
+      </p>
+    </div>
+  </div>
+{% endblock %}

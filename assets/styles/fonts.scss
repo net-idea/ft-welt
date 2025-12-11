@@ -1,0 +1,16 @@
+// ============================================================================
+// FONTS
+// Einbindung der Projektschriftarten (Webfonts)
+// ============================================================================
+
+@font-face {
+  font-family: 'Futura Book';
+  src: url('../fonts/futura-bk.eot');
+  src:
+    local('?'),
+    url('../fonts/futura-bk.woff') format('woff'),
+    url('../fonts/futura-bk.ttf') format('truetype'),
+    url('../fonts/futura-bk.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Datenschutzerklärung - Fenster & Türen-Welt
+{% endblock %}
+
+{% block content %}
+  <h2 class="mb-4">Datenschutzerklärung</h2>
+
+  <div class="card">
+    <div class="card-body">
+      <h3 class="h5">1. Datenschutz auf einen Blick</h3>
+      <h4 class="h6">Allgemeine Hinweise</h4>
+      <p>
+        Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website besuchen.
+      </p>
+
+      <h3 class="h5 mt-4">2. Datenerfassung auf unserer Website</h3>
+      <h4 class="h6">Wer ist verantwortlich für die Datenerfassung auf dieser Website?</h4>
+      <p>
+        Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.
+      </p>
+
+      <h3 class="h6">Wie erfassen wir Ihre Daten?</h3>
+      <p>
+        Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z.B. um Daten handeln, die Sie in ein Kontaktformular eingeben.
+      </p>
+
+      <h4 class="h5 mt-4">3. Kontaktformular</h4>
+      <p>
+        Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.
+      </p>
+
+      <h4 class="h5 mt-4">4. Ihre Rechte</h4>
+      <p>
+        Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung.
+      </p>
+
+      <p class="mt-4">
+        <small>Stand: {{ 'now'|date('d.m.Y') }}</small>
+      </p>
+    </div>
+  </div>
+{% endblock %}

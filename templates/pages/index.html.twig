@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Startseite' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-12">
+      <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel" style="margin-top: -20px; margin-left: -20px; margin-right: -20px;">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/images/slider-modern-zukunftssicher.jpg" class="d-block w-100" alt="Modern und Zukunftssicher" />
+            <div class="carousel-caption d-none d-md-block">
+              <h4>Modern und Zukunftssicher</h4>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/images/slider-einzigartig-individuell.jpg" class="d-block w-100" alt="Einzigartig und individuell" />
+            <div class="carousel-caption d-none d-md-block">
+              <h4>Einzigartig und individuell</h4>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/images/slider-anspruchsvoll-vielseitig.jpg" class="d-block w-100" alt="Anspruchsvoll und Vielseitig" />
+            <div class="carousel-caption d-none d-md-block">
+              <h4>Anspruchsvoll und Vielseitig</h4>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/images/slider-wohlfuehlen.jpg" class="d-block w-100" alt="Zum Wohlfühlen" />
+            <div class="carousel-caption d-none d-md-block">
+              <h4>Zum Wohlfühlen</h4>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Zurück</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Weiter</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Willkommen in der Welt der Fenster und Türen</h2>
+      <p>
+        Wir sind Ihr Partner für die <strong>Planung und Montage</strong> von <strong>Türen und Fenstern</strong>.
+      </p>
+      <p>
+        Wir arbeiten mit den führenden Herstellern der Branche zusammen. Unser höchster Anspruch ist Ihnen die beste Qualität bei optimalem Preis-Leistungs-Verhältnis zu liefern.
+      </p>
+      <p class="lead">
+        <a href="{{ path('page_kontakt') }}">Zögern Sie nicht, und sprechen Sie uns an. Wir beraten Sie gerne - in allen Fragen.</a>
+      </p>
+    </div>
+    <div class="col-md-6">
+      <h3>Kontakt</h3>
+      <p>
+        Nehmen Sie Kontakt mit uns auf für ein unverbindliches Beratungsgespräch.
+      </p>
+      <p>
+        <a href="{{ path('page_kontakt') }}" class="btn btn-primary btn-lg">Kontakt aufnehmen</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-6 mb-4">
+      <div class="info-column">
+        <img src="/images/fenster-welt.jpg" alt="Fenster" class="img-rounded" />
+        <h3><i class="fas fa-hand-point-right"></i> Fenster</h3>
+        <p>
+          Neuste Fertigungstechnologien, hochwertigste Materialien und maximale Energieeffizienz sind der Maßstab für unsere Lieferanten.
+        </p>
+        <a class="btn btn-primary" href="{{ path('app_page', {'slug': 'fenster'}) }}">erfahren Sie mehr &raquo;</a>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-4">
+      <div class="info-column">
+        <img src="/images/tuer-welt.jpg" alt="Türen" class="img-rounded" />
+        <h3><i class="fas fa-hand-point-right"></i> Türen</h3>
+        <p>
+          Egal ob Haustüren, Türen für Innenräume oder Spezialanfertigungen. Bei uns finden Sie das perfekte Produkt.
+        </p>
+        <a class="btn btn-primary" href="{{ path('app_page', {'slug': 'tueren'}) }}">erfahren Sie mehr &raquo;</a>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-4">
+      <div class="info-column">
+        <img src="/images/planung-welt.jpg" alt="Planung" class="img-rounded" />
+        <h3><i class="fas fa-check"></i> Planung</h3>
+        <p>
+          Wir übernehmen für Sie die Planung und kalkulieren Ihnen auf dieser Grundlage die optimale Ausstattung für Sie.
+        </p>
+        <a class="btn btn-primary" href="{{ path('app_page', {'slug': 'planung-montage'}) }}">erfahren Sie mehr &raquo;</a>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-4">
+      <div class="info-column">
+        <img src="/images/montage-welt.jpg" alt="Montage" class="img-rounded" />
+        <h3><i class="fas fa-check"></i> Montage</h3>
+        <p>
+          Sie brauchen sich um nichts zu kümmern. Wir sorgen für die pünktliche Lieferung und den fachgerechten Einbau.
+        </p>
+        <a class="btn btn-primary" href="{{ path('app_page', {'slug': 'planung-montage'}) }}">erfahren Sie mehr &raquo;</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

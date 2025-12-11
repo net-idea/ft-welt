@@ -1,0 +1,10 @@
+parameters:
+        - '#Cannot access offset .* on mixed#'
+    ignoreErrors:
+        containerXmlPath: var/cache/dev/App_KernelDevDebugContainer.xml
+    symfony:
+        - src/Kernel.php
+    excludePaths:
+        - src
+    paths:
+    level: 8

@@ -1,0 +1,93 @@
+## PHPStorm
+/.idea/
+
+## VisualStudioCode
+/.vscode/
+*.code-workspace
+
+## Environment
+.env
+
+## Composer
+composer.phar
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/*
+!/public/bundles/.gitignore
+/var/*
+!/var/.gitignore
+/vendor/*
+!/vendor/.gitignore
+###< symfony/framework-bundle ###
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/*
+!/node_modules/.gitignore
+/public/build/*
+!/public/build/.gitignore
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+/.phpunit.cache/
+###< phpunit/phpunit ###
+
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/asset-mapper ###
+#/public/assets/*
+#!/public/assets/.gitignore
+/assets/vendor/*
+!/assets/vendor/.gitignore
+###< symfony/asset-mapper ###
+
+###> phpstan/phpstan ###
+phpstan.neon
+###< phpstan/phpstan ###
+
+### PHP Coding Standards Fixer
+/php-cs-fixer
+/.php_cs
+/.php_cs.cache
+/.php-cs-fixer.php
+/.php-cs-fixer.cache
+
+## MariaDB
+/mariadb/backup/*
+!/mariadb/backup/.gitkeep
+/mariadb/data/*
+!/mariadb/data/.gitkeep
+/mariadb/log/*
+!/mariadb/log/.gitkeep
+
+## PostgreSQL
+/postgresql/backup/*
+!/postgresql/backup/.gitkeep
+/postgresql/data/*
+!/postgresql/data/.gitkeep
+
+## Redis
+/redis/data/*
+!/redis/data/.gitkeep
+
+## Certificates
+/certs/*
+!/certs/.gitkeep
+
+## OpenSSL
+/openssl/*
+!/openssl/openssl-sample.cnf
+
+# DB Adminer
+adminer.php
+adminer.css
+adminer*.*

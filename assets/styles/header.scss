@@ -1,0 +1,66 @@
+// ============================================================================
+// HEADER
+// Positionierung und Darstellung des Logos im Seitenkopf
+// ============================================================================
+
+.wrapper.header header {
+  position: relative;
+  height: 200px;
+}
+
+.wrapper.header header .logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  padding: 0;
+  display: block;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 200px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.wrapper.header header .logo h1 {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+
+  /* Use the asset in the Encore assets folder (relative to compiled CSS) */
+  background: transparent url('../images/ft-welt-logo.png') no-repeat center center;
+  background-size: contain; /* avoid cropping */
+
+  /* Visually hide the text but keep it available for screen readers */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+
+  /* clip-path: inset(50%); */
+
+  /* leads to empty logo image */
+  border: 0;
+}
+
+@media (max-width: 767px) {
+  .wrapper.header header {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .wrapper.header header .logo {
+    position: relative;
+    max-width: 100%;
+    line-height: normal;
+    height: auto;
+  }
+
+  .wrapper.header header .logo h1 {
+    background-size: contain;
+    height: 70px;
+  }
+}

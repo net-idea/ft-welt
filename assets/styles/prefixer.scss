@@ -1,0 +1,182 @@
+@use 'sass:color';
+@import 'variables';
+@import 'mixins';
+
+// ============================================================================
+// PREFIXER
+// Vendor-specific utility mixins (Animation, Transform, Transition)
+// ============================================================================
+
+// Animation mixins
+@mixin animation($args) {
+  animation: $args;
+}
+
+@mixin animation-delay($delay) {
+  animation-delay: $delay;
+}
+
+@mixin animation-direction($direction) {
+  animation-direction: $direction;
+}
+
+@mixin animation-duration($duration) {
+  animation-duration: $duration;
+}
+
+@mixin animation-iteration-count($count) {
+  animation-iteration-count: $count;
+}
+
+@mixin animation-name($name) {
+  animation-name: $name;
+}
+
+@mixin animation-play-state($state) {
+  animation-play-state: $state;
+}
+
+@mixin animation-timing-function($function) {
+  animation-timing-function: $function;
+}
+
+// Background Size
+
+@mixin background-size($args) {
+  -webkit-background-size: $args;
+  background-size: $args;
+}
+
+// Border Radius
+
+@mixin border-radius-prefixed($args) {
+  border-radius: $args;
+  background-clip: padding;
+  background-clip: padding-box;
+}
+
+@mixin border-radius-top-prefixed($args) {
+  -moz-border-radius-topleft: $args;
+  border-top-left-radius: $args;
+  -moz-border-radius-topright: $args;
+  border-top-right-radius: $args;
+  background-clip: padding;
+  background-clip: padding-box;
+}
+
+// Box Shadows
+
+@mixin box-shadow-prefixed($args) {
+  box-shadow: $args;
+}
+
+@mixin inner-shadow($args) {
+  @include box-shadow-prefixed(inset $args);
+}
+
+// Box Sizing
+
+@mixin box-sizing($args) {
+  box-sizing: $args;
+}
+
+@mixin border-box() {
+  @include box-sizing(border-box);
+}
+
+@mixin content-box() {
+  @include box-sizing(content-box);
+}
+
+// Columns
+
+@mixin columns($args) {
+  columns: $args;
+}
+
+@mixin column-count($count) {
+  column-count: $count;
+}
+
+@mixin column-gap($gap) {
+  column-gap: $gap;
+}
+
+@mixin column-width($width) {
+  column-width: $width;
+}
+
+@mixin column-rule($rule) {
+  column-rule: $rule;
+}
+
+// Gradients
+// Modern browsers support unprefixed gradients, keeping minimal prefixes for older browsers
+
+@mixin linear-gradient-top($color1, $color2) {
+  background-image: linear-gradient(to bottom, $color1, $color2);
+}
+
+@mixin linear-gradient-left($color1, $color2) {
+  background-image: linear-gradient(to right, $color1, $color2);
+}
+
+// Opacity
+
+@mixin opacity($factor) {
+  opacity: $factor;
+}
+
+// Text Shadow
+
+@mixin text-shadow($args) {
+  text-shadow: $args;
+}
+
+// Transforms
+
+@mixin transform($args) {
+  transform: $args;
+}
+
+@mixin rotate($deg: 45deg) {
+  @include transform(rotate($deg));
+}
+
+@mixin scale($factor: 0.5) {
+  @include transform(scale($factor));
+}
+
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+@mixin translate3d($x, $y, $z) {
+  @include transform(translate3d($x, $y, $z));
+}
+
+@mixin translate-hardware($x, $y) {
+  @include transform(translate3d($x, $y, 0));
+}
+
+// Transitions
+
+@mixin transition($args: 200ms) {
+  transition: $args;
+}
+
+@mixin transition-delay($delay: 0) {
+  transition-delay: $delay;
+}
+
+@mixin transition-duration($duration: 200ms) {
+  transition-duration: $duration;
+}
+
+@mixin transition-property($property: all) {
+  transition-property: $property;
+}
+
+@mixin transition-timing-function($function: ease) {
+  transition-timing-function: $function;
+}

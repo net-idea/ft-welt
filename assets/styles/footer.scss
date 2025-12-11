@@ -1,0 +1,82 @@
+@import 'variables';
+@import 'mixins';
+
+// ============================================================================
+// FOOTER
+// Footer layout and colors including newsletter form
+// ============================================================================
+
+footer {
+  padding-top: 15px;
+  color: $footer-text-color;
+  border-top: 5px solid $complementary-color-dark;
+  background: $complementary-color;
+
+  h4 {
+    color: $color-white;
+    font-size: 14px;
+  }
+
+  a {
+    color: $footer-link-color;
+    border-bottom: 1px dotted $footer-text-color;
+  }
+
+  a:hover {
+    color: $footer-link-hover;
+  }
+
+  .bottom-line {
+    width: auto;
+    padding: 20px;
+    background: $complementary-color-dark;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  hr {
+    border-top: 0;
+    border-bottom: 1px solid $complementary-color-light;
+  }
+}
+
+.footer-form {
+  .btn {
+    border: 0;
+    text-shadow: 0 0 0 transparent;
+
+    @include box-shadow(0 0 0 0 transparent);
+
+    &:hover {
+      border: 0;
+    }
+  }
+
+  fieldset input[type='text'] {
+    border: 1px solid $form-border-color;
+
+    @include box-shadow(0 0 0 0 transparent);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .footer-form input[type='text'] {
+    width: 90%;
+  }
+}
+
+@media (max-width: 767px) {
+  footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .bottom-line {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+# Git files
+.git
+.gitignore
+
+# Docker files
+.docker/
+.dockerignore
+
+# Environment files
+.env.local
+.env.*.local
+
+# IDE files
+.idea
+.vscode
+*.swp
+*.swo
+
+# Test files
+tests/
+phpunit.xml
+
+# Cache and logs
+var/cache/
+var/log/
+var/sessions/
+
+# Vendor (will be installed in Dockerfile)
+vendor/
+
+# Node modules (if any)
+node_modules/
+
+# MariaDB
+mariadb
+
+# PostgreSQL
+postgresql
+
+# Redis
+redis
+
+## OpenSSL
+openssl
+
+# Documentation
+readme.md
+license

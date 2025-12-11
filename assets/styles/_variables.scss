@@ -1,0 +1,129 @@
+@use 'sass:color';
+
+// ============================================================================
+// COLOR PALETTE
+// Brand and complementary colors
+// ============================================================================
+$primary-color: #72b626;
+$primary-color-light: color.adjust($primary-color, $lightness: 5%);
+$primary-color-dark: color.adjust($primary-color, $lightness: -10%);
+$complementary-color: #2d3032;
+$complementary-color-light: color.adjust($complementary-color, $lightness: 10%);
+$complementary-color-dark: color.adjust($complementary-color, $lightness: -5%);
+
+// ============================================================================
+// CORE COLORS
+// Basic color palette used across the application
+// ============================================================================
+$color-white: #fff;
+$color-black: #000;
+$color-gray-dark: #333;
+$color-gray: #666;
+$color-gray-medium: #999;
+$color-gray-light: #aaa;
+$color-gray-lighter: #ccc;
+$color-gray-lightest: #ddd;
+$color-gray-ultralight: #eee;
+$color-gray-bg: #f4f5f7;
+
+// Info button color
+$color-info: #49afcd;
+$color-info-light: #5bc0de;
+$color-info-border: #3c9eb6;
+
+// Alert colors
+$color-success-text: #468847;
+$color-success-bg: #dff0d8;
+$color-success-border: #d6e9c6;
+$color-error-text: #b94a48;
+$color-error-bg: #f2dede;
+$color-error-border: #eed3d7;
+
+// Box shadow color
+$color-shadow: #e6e6e6;
+
+// Transparent background overlay
+$color-bg-overlay: rgb(255 255 255 / 95%);
+$color-bg-overlay-dark: rgb(45 48 50 / 55%);
+
+// ============================================================================
+// BUTTONS
+// ============================================================================
+$btn-background: color.adjust($complementary-color, $lightness: 20%);
+$btn-background-highlight: color.adjust($btn-background, $lightness: 10%);
+$btn-border: color.adjust($btn-background, $lightness: -5%);
+$btn-primary-background: $primary-color;
+$btn-primary-background-highlight: color.adjust($btn-primary-background, $lightness: 5%);
+$btn-primary-border: color.adjust($btn-primary-background, $lightness: -5%);
+$btn-text-color: $color-white;
+$btn-shadow-color: $color-shadow;
+
+// ============================================================================
+// LINKS
+// ============================================================================
+$link-color: $primary-color;
+$link-color-hover: color.adjust($primary-color, $lightness: -10%);
+
+// ============================================================================
+// TYPOGRAPHY & LAYOUT
+// ============================================================================
+$body-background: $color-white;
+$text-color: $color-gray;
+$heading-color: $color-gray-dark;
+$base-font-family: 'Futura Book', 'Arial', sans-serif;
+$base-font-size: 12.75pt;
+$base-border-radius: 7.5pt;
+$base-border-nested: 3.75pt;
+
+// Lead text (e.g. on contact page)
+$lead-font-size: 15pt;
+$lead-font-weight: 600;
+
+// ============================================================================
+// NAVIGATION & FOOTER
+// ============================================================================
+$navbar-background: $complementary-color;
+$navbar-font-size: 12.75pt;
+$navbar-link-color: $color-white;
+$navbar-link-hover: $color-white;
+$navbar-active-background: $primary-color;
+$navbar-link-hover-background: $primary-color;
+$navbar-button-background: #222;
+$navbar-button-background-hover: $color-gray-dark;
+$navbar-active-link: $color-white;
+$navbar-border-overlay: rgb(255 255 255 / 10%);
+$footer-background: $complementary-color;
+$footer-text-color: $color-gray-light;
+$footer-link-color: $primary-color;
+$footer-link-hover: $color-white;
+
+// ============================================================================
+// FORMS & ALERTS
+// ============================================================================
+$form-text-color: #555;
+$form-background-color: $color-white;
+$form-border-color: $color-gray-lighter;
+$form-placeholder-color: $color-gray-medium;
+$form-field-spacing: 5.25pt;
+$alert-success-text: $color-success-text;
+$alert-success-bg: $color-success-bg;
+$alert-success-border: $color-success-border;
+$alert-error-text: $color-error-text;
+$alert-error-bg: $color-error-bg;
+$alert-error-border: $color-error-border;
+$alert-info-bg: #d9edf7;
+$alert-info-border: #bce8f1;
+$alert-info-text: #3a87ad;
+$alert-warning-bg: #fcf8e3;
+$alert-warning-border: #fbeed5;
+$alert-warning-text: #c09853;
+$alert-padding: 6pt 26.25pt 6pt 10.5pt;
+$alert-close-position-top: -1.5pt;
+$alert-close-position-right: -15.75pt;
+
+// ============================================================================
+// WELLS & INFO BOXES
+// ============================================================================
+$well-background: $color-gray-bg;
+$well-border-color: color.adjust($complementary-color, $lightness: 70%);
+$well-padding: 11.25pt;

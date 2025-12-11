@@ -1,0 +1,114 @@
+@import 'variables';
+@import 'mixins';
+
+// ============================================================================
+// NAVBAR
+// Main navigation in header area including dropdowns
+// ============================================================================
+
+.primary-navbar {
+  margin-top: 20px;
+  background-color: $navbar-background;
+  border-radius: $base-border-radius $base-border-radius 0 0;
+  padding: 0;
+
+  .navbar-brand {
+    font-size: $navbar-font-size;
+    color: $navbar-link-color;
+    padding: 15px 30px;
+    background-image: url('../images/navigation-divider.png');
+    background-repeat: no-repeat;
+    background-position: right 50%;
+
+    &:hover,
+    &:focus {
+      color: $navbar-link-hover;
+      background-color: transparent;
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: $navbar-link-color;
+      font-size: $navbar-font-size;
+      padding: 15px 30px;
+      background-image: url('../images/navigation-divider.png');
+      background-repeat: no-repeat;
+      background-position: right 50%;
+      text-transform: none;
+
+      &.active,
+      &:hover,
+      &:focus {
+        color: $navbar-link-hover;
+        background-color: $navbar-link-hover-background;
+      }
+    }
+
+    .dropdown-menu {
+      margin-top: 0;
+      border-radius: 0;
+      background-color: $navbar-background;
+      border: none;
+      padding: 0;
+
+      .dropdown-item {
+        color: $navbar-link-color;
+        padding: 12px 20px;
+
+        &.active,
+        &:hover,
+        &:focus {
+          color: $navbar-link-hover;
+          background-color: $navbar-link-hover-background;
+        }
+      }
+    }
+  }
+
+  .navbar-toggler {
+    color: $navbar-link-color;
+    border-color: rgb(255 255 255 / 40%);
+    margin: 8px 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+// ============================================================================
+// DESKTOP HOVER BEHAVIOR (CSS-only, no JavaScript conflicts)
+// ============================================================================
+
+@media (min-width: 992px) {
+  .primary-navbar {
+    .navbar-nav {
+      .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+
+      // Ensure dropdown toggle still works on click
+      .dropdown-toggle::after {
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+// ============================================================================
+// MOBILE STYLES
+// ============================================================================
+
+@media (max-width: 991.98px) {
+  .primary-navbar {
+    .navbar-nav {
+      .nav-link,
+      .dropdown-item {
+        background-image: none;
+        border-top: 1px solid $navbar-border-overlay;
+      }
+    }
+  }
+}

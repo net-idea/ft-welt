@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Planung & Montage - Fenster & Türen-Welt
+{% endblock %}
+
+{% block content %}
+  <div class="row mb-4">
+    <div class="col-12">
+      <h2>Planung &amp; Montage</h2>
+      <hr />
+    </div>
+  </div>
+
+  <div class="row gy-4 align-items-center mb-5">
+    <div class="col-lg-8">
+      <h3>Wir planen Ihre <strong>Fenster und Türen</strong></h3>
+      <p>
+        Zusammen mit unseren Kunden, am besten bei der Besichtigung des Objekts vor Ort, gerne auch anhand von Plänen, erstellen wir für Sie Ihr optimales Angebot.
+      </p>
+      <p>
+        Auf Wunsch nehmen wir für Sie Maß, damit alle Fenster und Türen optimal passen.
+      </p>
+      <p>
+        Bei geplanten Bau-Vorhaben stehen wir Ihnen gerne bereits bei der Planungsphase zur Seite. In Zusammenarbeit mit Architekten und anhand von Plänen finden wir gemeinsam die Optimale Lösung für unsere Kunden.
+      </p>
+    </div>
+    <div class="col-lg-4 text-center">
+      <img src="/images/bauplanung-raum.jpg" class="img-fluid img-rounded" alt="Planung" />
+    </div>
+  </div>
+
+  <div class="row gy-4 align-items-center mb-5">
+    <div class="col-lg-4 text-center">
+      <img src="/images/fenster-montage.jpg" class="img-fluid img-rounded" alt="Montage" />
+    </div>
+    <div class="col-lg-8">
+      <h2>Wir montieren Ihre <strong>Fenster und Türen</strong></h2>
+      <p>
+        Nach Lieferung der bestellten Elemente übernehmen wir sämtliche Montagearbeiten. Wir liefern schlüsselfertige Ergebnisse, damit keine Nacharbeit erforderlich ist.
+      </p>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Unsere Leistungen bei Fenstern</h3>
+          <ul>
+            <li>Montage von Rollladenkästen samt Antrieben</li>
+            <li>Setzen von Außen- und Innenfensterbänken</li>
+            <li>Verputzen der Leibungen und sauberes Abschließen der Öffnungen</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h3>Unsere Leistungen bei Türen</h3>
+          <ul>
+            <li>Vorbereitung der Türöffnungen</li>
+            <li>Setzen und Nivellieren der Zargen</li>
+            <li>Ausrichten der Türblätter</li>
+            <li>Einbau von Schlössern und Schließsystemen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="alert alert-info">
+        <p class="lead mb-2">
+          <strong>Sie wünschen Unterstützung?</strong>
+        </p>
+        <p class="mb-2">
+          <a href="{{ path('page_kontakt') }}">Sprechen Sie uns bei Ihrer Anfrage an</a> – wir beraten Sie, welche handwerklichen Leistungen wir übernehmen können.
+        </p>
+        <p class="mb-0">
+          Natürlich können Sie die Montage auch in Eigenregie oder durch Partnerbetriebe durchführen lassen.
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
